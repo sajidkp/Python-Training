@@ -39,9 +39,6 @@ def test_this_folder():
     assert sorted(expectedResult) == sorted(actualResult)       
     print("TEST CASE PASSED ! ")
 
-def testFun():
-    print("EHLLO !")
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="tree")
