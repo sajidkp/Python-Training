@@ -42,14 +42,8 @@ def test_this_folder():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="tree")
-    
-    try:
-        parser.add_argument("-p","--path", default=".", help="Location", type=str)
-        parser.add_argument("-d", "--depth", default=1, help="Depth (Should be integer)", type=int)
-    
-    except TypeError:
-        print("Invalid entry. If you are using arguments for PATH or DEPTH, please make sure the path is added in double quotes, and depth is a")
-        exit(0)
+    parser.add_argument("-p","--path", default=".", help="Location", type=str)
+    parser.add_argument("-d", "--depth", default=1, help="Depth (Should be integer)", type=int)
     
     args = parser.parse_args()    
     main(args.path, args.depth)
