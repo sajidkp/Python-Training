@@ -44,19 +44,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="tree")
     
     try:
-        parser.add_argument("-p","--path", default=".", type=str)
-        parser.add_argument("-d", "--depth", default=1, type=int)
+        parser.add_argument("-p","--path", default=".", help="Location", type=str)
+        parser.add_argument("-d", "--depth", default=1, help="Depth (Should be integer)", type=int)
     
     except TypeError:
         print("Invalid entry. If you are using arguments for PATH or DEPTH, please make sure the path is added in double quotes, and depth is a")
         exit(0)
     
     args = parser.parse_args()    
-    
-    if not os.path.exists(args.path):
-        print ("Invalid Path !")
-        exit (0)
-
-    print (f"-------\nTree for: \nPath: { os.path.abspath(__file__) if args.path == '.' else args.path }\nDepth: {args.depth}")
     main(args.path, args.depth)
 
