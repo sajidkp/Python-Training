@@ -32,13 +32,9 @@ def test_this_folder():
         (1, 'tree.cpython-37.pyc')
     ]
     actualResult = [(depth, file.name) for (depth, file) in files(".", 0, 1)]  
-    test = 1
     print("----------------")
     print("Executing Test Case")
-    assert 1 == test
     assert sorted(expectedResult) == sorted(actualResult)       
-    print("TEST CASE PASSED ! ")
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="tree")
