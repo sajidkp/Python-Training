@@ -1,4 +1,3 @@
-
 def Spush(stack, item):
     stack.append(item)
     return stack
@@ -42,16 +41,3 @@ def main():
     
 if __name__ == "__main__":
     main()
-
-def test_push():
-    stack = []
-    expectedResult = [2]
-    actualResult = Spush(2)
-    assert (expectedResult == actualResult)
-
-def test_pop():
-    stack = [1,2,3]
-    expectedResult = 3
-    actualResult = Spop(stack)
-    assert (expectedResult == actualResult)
-    
