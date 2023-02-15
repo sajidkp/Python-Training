@@ -2,7 +2,7 @@ import unittest
 
 from stack import Spush, Spop
 
-class TestQueueFunctions(unittest.TestCase):
+class TestStackFunctions(unittest.TestCase):
 
     def test_push(self):
         testStack = []
