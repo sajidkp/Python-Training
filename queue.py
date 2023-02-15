@@ -35,7 +35,7 @@ def main():
         elif (selection == 3): print(findLen(queue))
         elif (selection == 4): print(viewFront(queue))
         else: 
-            print ("Invalid selection. Exitting")
+            print (" Exitting")
             return
             
     
