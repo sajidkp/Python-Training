@@ -1,3 +1,5 @@
+import os.path
+
 class Stack:
     def __init__(self):
         self.items = [] 
@@ -18,9 +20,12 @@ class Stack:
 class FileStack: 
     def __init__(self,fileName):
         self.fileName = fileName
+        f = open(self.fileName, "a")
+        f.close()
+
 
     def push(self, item):
-        with open(self.fileName, "a") as f: 
+        with open(self.fileName, "a+") as f: 
             f.write(item + "\n")
         
     def pop(self):
@@ -33,7 +38,7 @@ class FileStack:
                 item = lines.pop()
                 f.seek(0)
                 f.truncate(0)
-                f.write_lines(lines)
+                f.writelines(lines)
                 return item
             else: return None
      
@@ -42,7 +47,7 @@ class FileStack:
             # Readlines will return list with all lines
             lines = f.readlines()
             try:
-                item = lines[-1]
+                item = lines[-1].strip('\n')
                 return item
             except IndexError:
                 return None 
